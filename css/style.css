@@ -1,0 +1,81 @@
+@charset "utf-8";
+/* CSS Document */
+body {
+	font-family: 'Montserrat', sans-serif;
+}
+
+h1, h2 {
+	font-family: 'Londrina Solid', cursive;
+}
+
+h1 {
+	font-size: 1.4em;
+}
+
+h2 {
+	font-size: 3em;
+	color: #8f5bfe;
+	margin: 20px;
+}
+
+.btn {
+	background-color: #56D7D8;
+	border-color: #56D7D8;
+	color: #8f5bfe;
+	font-weight: bold;
+}
+
+.btn:hover {
+	background-color: #39B1B2;
+	border-color: #8f5bfe;
+	color: #8f5bfe;
+	font-weight: bold;
+}
+
+.card:hover{
+	transform: scale(1.05);
+} 
+
+.card{
+	margin: 20px ;
+	transition: all 500ms;
+} 
+
+footer {
+	color: #8f5bfe;
+	font-weight: bold;
+}
+
+/*Barre de navigation*/
+.barre_navigation{
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	flex-wrap: wrap;
+	background-color: #78E4E5;
+}
+
+.logo {
+	height: 40px;
+	width: auto;
+	margin-right: 10px;
+}
+
+.navbar a {
+	display: flex;
+	color: #8f5bfe;
+	font-weight: bold;
+}
+/*Barre de navigation*/
+
+.teddy-img {
+	width: 70%;
+}
+
+.teddy-img-mini {
+	width: 20%;
+}
+
+.div-color, .div-quantite {
+	margin: 15px 0px;
+}
