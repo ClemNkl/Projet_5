@@ -34,12 +34,12 @@ h2 {
 
 .card:hover{
 	transform: scale(1.05);
-} 
+}
 
 .card{
 	margin: 20px ;
 	transition: all 500ms;
-} 
+}
 
 footer {
 	color: #8f5bfe;
@@ -78,4 +78,9 @@ footer {
 
 .div-color, .div-quantite {
 	margin: 15px 0px;
+}
+
+label, input {
+	width: 200px;
+	text-align: left;
 }

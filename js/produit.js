@@ -42,7 +42,7 @@ let labelColor = document.createElement("p");
 let choiceColor = document.createElement("select");
 let divQuantité = document.createElement('div');
 divQuantité.classList.add('div-quantite');
-let addCart = document.createElement("input");
+let addCart = document.createElement("button");
 addCart.classList.add("btn", "btn-lg");
 
 // Création du bloc descriptif de la peluche
@@ -114,7 +114,7 @@ teddyGet()
 teddyGet()
     .then(function (response) {
         addCart.type = "submit";
-        teddy.appendChild(divDescription).appendChild(addCart).innerHTML = "Envoyer";
+        teddy.appendChild(divDescription).appendChild(addCart).innerHTML = "Ajouter au panier";
         addCart.addEventListener("click", function (event) {
             if (sessionStorage.getItem("color")) {
                 event.preventDefault();
