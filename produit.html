@@ -4,45 +4,64 @@
     	<meta charset="utf-8">
     	<meta http-equiv="X-UA-Compatible" content="IE=edge">
    		<meta name="viewport" content="width=device-width, initial-scale=1">
-	  
+
     	<title>Nounours</title>
-	  
+
     	<!-- Bootstrap -->
     	<link href="css/bootstrap-4.4.1.css" rel="stylesheet">
-	  
+
 	  	<link href="css/style.css" rel="stylesheet">
 	  	<link href="https://fonts.googleapis.com/css2?family=Londrina+Solid&family=Montserrat&display=swap" rel="stylesheet">
   	</head>
-	
+
   	<body>
-    
+
 		<!-- Barre de navigation -->
 		<nav class="navbar navbar-expand-lg barre_navigation">
 			  <a class="navbar-brand" href="index.html">
-			<img class="logo" src="images/logo.png" alt="logo de Orinoco"/><h1>Orinoursons</h1>
-		  </a>
+						<img class="logo" src="images/logo.png" alt="logo de Orinoco"/><h1>Orinoursons</h1>
+		  	</a>
 			  <a class="navbar-brand" href="panier.html">Panier</a>
 		</nav>
-	
+
 		<a href="index.html">&laquo; Retour au catalogue</a>
-	  
-		<!-- Description peluche produite en JS -->
+
+		<!-- Description dynamique de la peluche -->
 		<div class="container">
-			<div class="row" id="teddy">
+			<div class="row">
+				<!-- Bloc pour l'image de la peluche -->
+				<div class="col-6" id="divImg"></div>
+				<!-- Bloc pour la description de la peluche -->
+				<div class="col-6">
+					<h3 class="text-center" id="nameTeddy"></h3>
+					<p id="description"></p>
+					<p id="price"></p>
+					<!-- Sélection de la couleur -->
+					<div class="div-color">
+						<p>Veuillez choisir une couleur :</p>
+						<select id="choiceColor"></select>
+					</div>
+					<!-- Sélection de la quantité -->
+					<div class="div-quantite" id="divQuantité">
+						<p>Quantité :</p>
+						<select id="choiceAmount"></select>
+					</div>
+					<button class="btn btn-lg" id="addCart" type="submit">Ajouter au panier</button>
+				</div>
 			</div>
 		</div>
-	
+
 		<hr>
-	  
+
     	<footer class="row">
     		<div class="col-12 text-center">
 				<p>Copyright &copy; 2020 &middot; All Rights Reserved - Clémence Nakul for Orinoco</p>
 			</div>
     	</footer>
-	  
+
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
     <script src="js/jquery-3.4.1.min.js"></script>
-    
+
 	<!-- Include all compiled plugins (below), or include individual files as needed -->
     <script src="js/popper.min.js"></script>
   	<script src="js/bootstrap-4.4.1.js"></script>
