@@ -92,16 +92,19 @@ teddyGet()
         addCart.addEventListener("click", function (event) {
             if (colorStorage != 0) {
                 event.preventDefault();
+                if (localStorage.getItem(idTeddy + colorStorage)) {
+                  let oldArticle = JSON.parse(localStorage.getItem(idTeddy + colorStorage));
+                  let oldAmount = oldArticle["amountArticle"];
+                  amountStorage = parseInt(amountStorage) + parseInt(oldAmount);
+                }
                 let article = (JSON.stringify({
-                    idArticle : response["id"],
                     nameArticle : response["name"],
                     imageArticle : response["imageUrl"],
                     priceArticle : response["price"] / 100,
                     colorArticle : colorStorage,
                     amountArticle : amountStorage,
                 }));
-                let nomArticle = response["id"];
-                localStorage.setItem("nomArticle", article);
+                localStorage.setItem(idTeddy + colorStorage , article);
                 window.location = "panier.html";
             }
             else {

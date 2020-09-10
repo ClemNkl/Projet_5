@@ -1,21 +1,3 @@
-if (sessionStorage.length >= 6) {
-    let article = (JSON.stringify({
-        nameArticle : sessionStorage.name,
-        idArticle : sessionStorage.id,
-        imageArticle : sessionStorage.image,
-        priceArticle : sessionStorage.price,
-        colorArticle : sessionStorage.color,
-        amountArticle : sessionStorage.amount,
-    }));
-    sessionStorage.clear();
-    if (localStorage.length == 0) {
-    localStorage.setItem("NewArticle0", article);
-    }
-    else {
-        localStorage.setItem("NewArticle" + localStorage.length++, article);
-    }
-}
-
 // Création du bloc/tableau panier
 if (localStorage.length >= 1) {
     for (i = 0; i < localStorage.length; i++) {
@@ -34,7 +16,7 @@ if (localStorage.length >= 1) {
         let teddyRemote = document.createElement("td");
         let teddyXRemote = document.createElement("a");
         teddyXRemote.classList.add("btn");
-        teddyXRemote.setAttribute("data-id", "remote" + i);
+        teddyXRemote.setAttribute("data-id", localStorage.key(i));
         elt.appendChild(ligneNewArticle).appendChild(divIMG).appendChild(imgTeddy);
         elt.appendChild(ligneNewArticle).appendChild(teddyName).innerHTML = newArticle["nameArticle"];
         elt.appendChild(ligneNewArticle).appendChild(teddyColor).innerHTML = newArticle["colorArticle"];
@@ -91,60 +73,36 @@ for (i = 0; i < button.length; i++) {
 
 // Formulaire de contact
 let nom = document.getElementById("nom");
-let nomValue;
-nom.addEventListener('input', function(event) {
-    nomValue = event.target.value;
-});
-
 let prenom = document.getElementById("prenom");
-let prenomValue;
-prenom.addEventListener('input', function(event) {
-    prenomValue = event.target.value;
-});
-
 let mail = document.getElementById("email");
-let mailValue;
-mail.addEventListener('input', function(event) {
-    mailValue = event.target.value;
-});
-
 let adresse = document.getElementById("adresse");
-let adresseValue;
-adresse.addEventListener('input', function(event) {
-    adresseValue = event.target.value;
-});
-
 let cp = document.getElementById("cp");
-let cpValue;
-cp.addEventListener('input', function(event) {
-    cpValue = event.target.value;
-});
-
 let ville = document.getElementById("ville");
-let villeValue;
-ville.addEventListener('input', function(event) {
-    villeValue = event.target.value;
-});
 
 let idOrder = Math.random() * 10000000;
 let idOrderInt = parseInt(idOrder);
 let orderContent = localStorage;
 let prix = sessionStorage.getItem("prixOrder");
 
-let order = (JSON.stringify({
-    idOrder : idOrderInt,
-    prix : prix,
-    nom : nomValue,
-    prenom : prenomValue,
-    mail : mailValue,
-    adresse : adresseValue,
-    cp : cpValue,
-    ville : villeValue,
-    content: orderContent
-}));
-
 let buttonOrder = document.getElementById("btnOrder");
 buttonOrder.addEventListener("click", function() {
+    let nomValue = nom.value;
+    let prenomValue = prenom.value;
+    let mailValue = mail.value;
+    let adresseValue = adresse.value;
+    let cpValue = cp.value;
+    let villeValue = ville.value;
+    let order = (JSON.stringify({
+        idOrder : idOrderInt,
+        prix : prix,
+        nom : nomValue,
+        prenom : prenomValue,
+        mail : mailValue,
+        adresse : adresseValue,
+        cp : cpValue,
+        ville : villeValue,
+        content: orderContent
+    }));
     localStorage.clear();
     localStorage.setItem("NewOrder", order);
     windon.location = "recap.html";
