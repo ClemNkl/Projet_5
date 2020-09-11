@@ -16,7 +16,12 @@ if (localStorage.length >= 1) {
         let teddyRemote = document.createElement("td");
         let teddyXRemote = document.createElement("a");
         teddyXRemote.classList.add("btn");
-        teddyXRemote.setAttribute("data-id", localStorage.key(i));
+        teddyXRemote.setAttribute("id", localStorage.key(i));
+        teddyXRemote.addEventListener("click", function() {
+            let attribut = teddyXRemote.getAttribute("id");
+            localStorage.removeItem(attribut);
+            window.location = "panier.html";
+        });
         elt.appendChild(ligneNewArticle).appendChild(divIMG).appendChild(imgTeddy);
         elt.appendChild(ligneNewArticle).appendChild(teddyName).innerHTML = newArticle["nameArticle"];
         elt.appendChild(ligneNewArticle).appendChild(teddyColor).innerHTML = newArticle["colorArticle"];
@@ -58,17 +63,6 @@ if (localStorage.length >= 1) {
 else {
     let secondElt = document.getElementById("message");
     secondElt.innerHTML = "Votre panier est vide!";
-}
-
-// Boutons suppression d'un seul article
-let elt = document.getElementById("panier");
-let button = elt.querySelectorAll("a.btn");
-for (i = 0; i < button.length; i++) {
-    button[i].addEventListener("click", function(){
-        let articleToRemove = localStorage.key(i);
-        localStorage.removeItem(articleToRemove);
-        //window.location = "panier.html";
-    });
 }
 
 // Formulaire de contact
