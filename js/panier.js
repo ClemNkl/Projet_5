@@ -66,38 +66,35 @@ else {
 }
 
 // Formulaire de contact
-let nom = document.getElementById("nom");
-let prenom = document.getElementById("prenom");
-let mail = document.getElementById("email");
-let adresse = document.getElementById("adresse");
-let cp = document.getElementById("cp");
-let ville = document.getElementById("ville");
-
 let idOrder = Math.random() * 10000000;
 let idOrderInt = parseInt(idOrder);
 let orderContent = localStorage;
 let prix = sessionStorage.getItem("prixOrder");
 
-let buttonOrder = document.getElementById("btnOrder");
-buttonOrder.addEventListener("click", function() {
-    let nomValue = nom.value;
-    let prenomValue = prenom.value;
-    let mailValue = mail.value;
-    let adresseValue = adresse.value;
-    let cpValue = cp.value;
-    let villeValue = ville.value;
+if (localStorage.length >= 1) {
+  let buttonOrder = document.getElementById("btnOrder");
+  buttonOrder.addEventListener("click", function() {
+    let nom = document.getElementById("nom").value;
+    let prenom = document.getElementById("prenom").value;
+    let mail = document.getElementById("email").value;
+    let adresse = document.getElementById("adresse").value;
+    let cp = document.getElementById("cp").value;
+    let ville = document.getElementById("ville").value;
     let order = (JSON.stringify({
         idOrder : idOrderInt,
         prix : prix,
-        nom : nomValue,
-        prenom : prenomValue,
-        mail : mailValue,
-        adresse : adresseValue,
-        cp : cpValue,
-        ville : villeValue,
+        nom : nom,
+        prenom : prenom,
+        mail : mail,
+        adresse : adresse,
+        cp : cp,
+        ville : ville,
         content: orderContent
     }));
-    localStorage.clear();
     localStorage.setItem("NewOrder", order);
-    windon.location = "recap.html";
-});
+    window.location = "recap.html";
+  });
+}
+else {
+    alert("Veuillez choisir au moins un article du catalogue pour passer commande.");
+}

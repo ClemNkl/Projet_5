@@ -54,15 +54,15 @@
 		<form class="col-12 text-center" method="post" action="#">
 		<div class="form-group">
 			<label for="name">Nom</label>
-			<input type="text" id="om" required />
+			<input type="text" id="nom" required pattern="[a-zA-ZÀ-ÿ]"/>
 		</div>
 		<div class="form-group">
 			<label for="surname">Prénom</label>
-			<input type="text" id="prenom" required />
+			<input type="text" id="prenom" required pattern="[a-zA-ZÀ-ÿ]"/>
 		</div>
 		<div class="form-group">
 			<label for="email">Adresse email</label>
-			<input type="email" id="email" required />
+			<input type="email" id="email" required pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}"/>
 		</div>
 		<div class="form-group">
 			<label for="adresse">Adresse<br></label>
@@ -70,11 +70,11 @@
 		</div>
 		<div class="form-group">
 			<label for="cp">Code postal</label>
-			<input type="text" id="cp" required />
+			<input type="text" id="cp" required pattern="[0-9]{5}"/>
 		</div>
 		<div class="form-group">
 			<label for="ville">Ville</label>
-			<input type="text" id="ville" required />
+			<input type="text" id="ville" required pattern="[a-zA-ZÀ-ÿ]"/>
 		</div>
 			<button id="btnOrder" class="btn btn-lg" type="submit">Passer la commande</button>
 		</form>
