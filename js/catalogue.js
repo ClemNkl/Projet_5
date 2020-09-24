@@ -1,6 +1,5 @@
 // Récupération des éléments
 function teddiesGet() {
-
     return new Promise((resolve, reject) => {
         let recoverHttp = new XMLHttpRequest();
         recoverHttp.open('GET', 'http://localhost:3000/api/teddies/');
@@ -18,11 +17,9 @@ function teddiesGet() {
     })
 };
 
-
 // Création d'un bloc peluche
 teddiesGet()
     .then(function (response) {
-
         for (let i = 0; i < response.length; i++) {
             let elt = document.getElementById("teddy");
             let myImg = new Image();
@@ -52,9 +49,6 @@ teddiesGet()
             elt.appendChild(divColonne).appendChild(divCard).appendChild(divCardBody).appendChild(priceTeddy).innerHTML = "Prix : " + response[i]["price"] / 100 + "€";
             elt.appendChild(divColonne).appendChild(divCard).appendChild(divCardBody).appendChild(lienProduct).innerHTML = "En savoir plus";
         }
-        
     })
- 
     .catch(function (error) {
-
-     });
+    });
