@@ -14,7 +14,7 @@
 	  	<link href="https://fonts.googleapis.com/css2?family=Londrina+Solid&family=Montserrat&display=swap" rel="stylesheet">
   	</head>
 
-  	<body>
+  	<body class="page_produit">
 
 		<!-- Barre de navigation -->
 		<nav class="navbar navbar-expand-lg barre_navigation">
@@ -24,15 +24,15 @@
 			  <a class="navbar-brand" href="panier.html">Panier</a>
 		</nav>
 
-		<a href="index.html">&laquo; Retour au catalogue</a>
+		<a class="return_index" href="index.html">&laquo; Retour au catalogue</a>
 
 		<!-- Description dynamique de la peluche -->
 		<div class="container">
 			<div class="row">
 				<!-- Bloc pour l'image de la peluche -->
-				<div class="col-6" id="divImg"></div>
+				<div class="col-lg-6 col-xs-12" id="divImg"></div>
 				<!-- Bloc pour la description de la peluche -->
-				<div class="col-6">
+				<div class="col-lg-6 col-xs-12">
 					<h3 class="text-center" id="nameTeddy"></h3>
 					<p id="description"></p>
 					<p id="price"></p>
@@ -46,18 +46,18 @@
 						<p>Quantité :</p>
 						<select id="choiceAmount"></select>
 					</div>
-					<button class="btn btn-lg" id="addCart" type="submit">Ajouter au panier</button>
+					<div class="text-center">
+						<button class="btn btn-lg" id="addCart" type="submit">Ajouter au panier</button>
+					</div>
 				</div>
 			</div>
 		</div>
 
-		<hr>
-
-    	<footer class="row">
-    		<div class="col-12 text-center">
-				<p>Copyright &copy; 2020 &middot; All Rights Reserved - Clémence Nakul for Orinoco</p>
+		<footer class="row bottom">
+			<div class="col-12 text-center">
+			<p>Copyright &copy; 2020 &middot; All Rights Reserved - Clémence Nakul for Orinoco</p>
 			</div>
-    	</footer>
+		</footer>
 
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
     <script src="js/jquery-3.4.1.min.js"></script>

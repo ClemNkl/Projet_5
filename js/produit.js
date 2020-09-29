@@ -98,6 +98,7 @@ teddyGet()
                   amountStorage = parseInt(amountStorage) + parseInt(oldAmount);
                 }
                 let article = (JSON.stringify({
+                    id : idTeddy,
                     nameArticle : response["name"],
                     imageArticle : response["imageUrl"],
                     priceArticle : response["price"] / 100,

@@ -28,7 +28,7 @@ teddiesGet()
             myImg.src = response[i]["imageUrl"];
             myImg.classList.add('card-img-top');
             let divColonne = document.createElement("div");
-            divColonne.classList.add("col-md-4")
+            divColonne.classList.add("col-lg-4", 'col-md-6', 'col-xs-12')
             let divCard = document.createElement("div");
             divCard.classList.add("card");
             let divCardBody = document.createElement("div");

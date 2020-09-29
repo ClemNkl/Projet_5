@@ -32,21 +32,28 @@ h2 {
 	font-weight: bold;
 }
 
-.card:hover{
-	transform: scale(1.05);
+.teddy-img {
+	width: 70%;
 }
 
-.card{
-	margin: 20px ;
-	transition: all 500ms;
+.bottom {
+	position: fixed;
+	bottom: 0;
+	z-index: 1000;
+	margin-top: 20px;
+	background-color: #fff;
+	width: 100%;
+	text-align: center;
 }
 
 footer {
+	padding-top: 20px;
 	color: #8f5bfe;
 	font-weight: bold;
+	font-size: 0.8em;
 }
 
-/*Barre de navigation*/
+/*Navigation*/
 .barre_navigation{
 	display: flex;
 	justify-content: space-between;
@@ -66,20 +73,45 @@ footer {
 	color: #8f5bfe;
 	font-weight: bold;
 }
-/*Barre de navigation*/
-.teddy-img {
-	width: 70%;
+/*Navigation - END*/
+
+/*Catalogue*/
+.card{
+	margin: 20px ;
+	transition: all 500ms;
 }
 
-.teddy-img-mini {
-	width: 10%;
+.card:hover{
+	transform: scale(1.05);
+}
+/*Catalogue - END*/
+
+/*Page produit*/
+.return_index {
+	margin: 10px;
+}
+
+#divImg {
+	padding: 50px 0px;
+	text-align: center;
 }
 
 .div-color, .div-quantite {
 	margin: 15px 0px;
 }
 
+.page_produit .container {
+	margin-bottom: 70px;
+}
+/*Page produit - END*/
+
+/*Panier*/
+th, td {
+	width: 20%;
+}
+
 label, input {
 	width: 200px;
 	text-align: left;
 }
+/*Panier - END*/

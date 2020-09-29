@@ -8,7 +8,7 @@ if (localStorage.length >= 1) {
         let imgTeddy = new Image();
         imgTeddy.src = newArticle["imageArticle"];
         imgTeddy.addEventListener("load", function () { });
-        imgTeddy.classList.add("teddy-img-mini");
+        imgTeddy.classList.add("teddy-img");
         let teddyName = document.createElement("td");
         let teddyColor = document.createElement("td");
         let teddyQuantité = document.createElement("td");
@@ -68,11 +68,17 @@ else {
 // Création n° de commande + récupération du contenu et du prix total de la commande
 let idOrder = Math.random() * 10000000;
 let idOrderInt = parseInt(idOrder);
-let orderContent = localStorage;
-let prix = sessionStorage.getItem("prixOrder");
+sessionStorage.setItem("idOrder", idOrderInt);
+
+//Création du tableau panier contenant les id des articles
+let contentPanier = [];
+for (i = 0; i < localStorage.length; i++) {
+    let article = JSON.parse(localStorage.getItem(localStorage.key(i)));
+    contentPanier.push(article["id"]);
+}
 
 // Vérifications des valeurs des inputs du formulaire
-let textValidation = /[A-Za-z]/;
+let textValidation = /^[A-Za-z]+$/;
 let mailValidation = /^[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$/;
 let cpValidation = /^[0-9]{5}$/;
 
@@ -119,31 +125,32 @@ ville.addEventListener('change', function(event) {
 // POST du formulaire de contact
 let buttonOrder = document.getElementById("btnOrder");
 buttonOrder.addEventListener("click", function(event) {
+    event.preventDefault();
     if (localStorage.length == 0) {
       alert('Veuillez ajouter un article au panier pour passer commande.');
     }
     else {
       let order = (JSON.stringify({
-          idOrder : idOrderInt,
-          prix : prix,
-          nom : nom.value,
-          prenom : prenom.value,
-          mail : mail.value,
-          adresse : adresse.value,
-          cp : cp.value,
-          ville : ville.value,
-          content: orderContent
+          contact: {
+            firstName: prenom.value,
+            lastName: nom.value,
+            address: adresse.value,
+            city: ville.value,
+            email: mail.value
+          },
+          products: contentPanier
       }));
       localStorage.setItem("NewOrder", order);
       new Promise((resolve, reject) => {
           let request = new XMLHttpRequest();
-          request.open('POST', 'http://localhost:3000/api/teddies/');
+          request.open('POST', 'http://localhost:3000/api/teddies/order');
           request.setRequestHeader("Content-Type", "application/json");
+          request.send(order);
           request.onreadystatechange = function () {
               if (this.readyState === XMLHttpRequest.DONE) {
-                  if (this.status === 200) {
-                      request.send(order);
-                      window.location = "recap.html";
+                  if (this.status === 201) {
+                      console.log(JSON.parse('http://localhost:3000/api/teddies/order'));
+                      //window.location = "recap.html";
                   }
                   else {
                       reject(XMLHttpRequest);
