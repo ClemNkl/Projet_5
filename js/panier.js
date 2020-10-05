@@ -65,11 +65,6 @@ else {
     secondElt.innerHTML = "Votre panier est vide!";
 }
 
-// Création n° de commande + récupération du contenu et du prix total de la commande
-let idOrder = Math.random() * 10000000;
-let idOrderInt = parseInt(idOrder);
-sessionStorage.setItem("idOrder", idOrderInt);
-
 //Création du tableau panier contenant les id des articles
 let contentPanier = [];
 for (i = 0; i < localStorage.length; i++) {
@@ -149,8 +144,9 @@ buttonOrder.addEventListener("click", function(event) {
           request.onreadystatechange = function () {
               if (this.readyState === XMLHttpRequest.DONE) {
                   if (this.status === 201) {
-                      console.log(JSON.parse('http://localhost:3000/api/teddies/order'));
-                      //window.location = "recap.html";
+                      sessionStorage.setItem("order", this.responseText);
+                      window.location = "recap.html";
+                      localStorage.clear();
                   }
                   else {
                       reject(XMLHttpRequest);

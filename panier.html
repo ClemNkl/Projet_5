@@ -18,10 +18,10 @@
 
     <!-- Barre de navigation -->
     <nav class="navbar navbar-expand-lg barre_navigation">
-		<a class="navbar-brand" href="index.html">
-        	<img class="logo" src="images/logo.png" alt="logo de Orinoco"/><h1>Orinoursons</h1>
+        <a class="navbar-brand" href="index.html">
+        	 <img class="logo" src="images/logo.png" alt="logo de Orinoco"/><h1>Orinoursons</h1>
       	</a>
-		<a class="navbar-brand" href="panier.html">Panier</a>
+		    <a class="navbar-brand" href="panier.html">Panier</a>
     </nav>
 
     <!-- Titre de la page-->
@@ -29,71 +29,63 @@
 
     <hr>
 
-	<div class="container">
-		<div class="row">
-			<table class="col-12 text-center" id="panier">
-				<tr>
-					<th>Image</th>
-					<th>Nom</th>
-					<th>Couleur</th>
-					<th>Quantité</th>
-					<th>Prix</th>
-					<th>Supprimer</th>
-				</tr>
-			</table>
-			<div class="col-12 text-center" id="message"></div>
-		</div>
-	</div>
+	  <div class="container">
+		    <div class="row">
+	         <table class="col-12 text-center" id="panier">
+				       <tr>
+					        <th>Image</th>
+					        <th>Nom</th>
+					        <th>Couleur</th>
+					        <th>Quantité</th>
+				          <th>Prix</th>
+			            <th>Supprimer</th>
+				       </tr>
+			     </table>
+			     <div class="col-12 text-center" id="message"></div>
+		    </div>
+	  </div>
 
-
-	<br/>
-	<h2 class="text-center">Vos coordonnées</h2>
+    <br/>
+	  <h2 class="text-center">Vos coordonnées</h2>
     <hr>
 
-	<div class="row">
-		<form class="col-12 text-center" method="post" action="#">
-		<div class="form-group">
-			<label for="name">Nom</label>
-			<input type="text" id="nom" required/>
-		</div>
-		<div class="form-group">
-			<label for="surname">Prénom</label>
-			<input type="text" id="prenom" required/>
-		</div>
-		<div class="form-group">
-			<label for="email">Adresse email</label>
-			<input type="email" id="email" required/>
-		</div>
-		<div class="form-group">
-			<label for="adresse">Adresse<br></label>
-			<textarea id="adresse" required></textarea>
-		</div>
-		<div class="form-group">
-			<label for="cp">Code postal</label>
-			<input type="text" id="cp" required/>
-		</div>
-		<div class="form-group">
-			<label for="ville">Ville</label>
-			<input type="text" id="ville" required/>
-		</div>
-			<button id="btnOrder" class="btn btn-lg" type="submit">Passer la commande</button>
-		</form>
+	  <div class="row">
+		    <form class="col-12 text-center" method="post" action="#">
+		    <div class="form-group">
+			      <label for="nom">Nom</label>
+			      <input type="text" id="nom" required/>
+		    </div>
+		    <div class="form-group">
+			       <label for="prenom">Prénom</label>
+			       <input type="text" id="prenom" required/>
+		   </div>
+	   	 <div class="form-group">
+			      <label for="email">Adresse email</label>
+			      <input type="email" id="email" required/>
+		   </div>
+		   <div class="form-group">
+			      <label for="adresse">Adresse<br></label>
+			      <textarea id="adresse" required></textarea>
+		   </div>
+		   <div class="form-group">
+			      <label for="cp">Code postal</label>
+			      <input type="text" id="cp" required/>
+		   </div>
+		   <div class="form-group">
+			      <label for="ville">Ville</label>
+			      <input type="text" id="ville" required/>
+		   </div>
+			 <button id="btnOrder" class="btn btn-lg" type="submit">Passer la commande</button>
+		   </form>
     </div>
 
-  <footer class="row">
-    <div class="col-12 text-center">
-    <p>Copyright &copy; 2020 &middot; All Rights Reserved - Clémence Nakul for Orinoco</p>
-    </div>
-  </footer>
+    <footer class="row">
+      <div class="col-12 text-center">
+        <p>Copyright &copy; 2020 &middot; All Rights Reserved - Clémence Nakul for Orinoco</p>
+      </div>
+    </footer>
 
-    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
-    <script src="js/jquery-3.4.1.min.js"></script>
-
-    <!-- Include all compiled plugins (below), or include individual files as needed -->
-    <script src="js/popper.min.js"></script>
-	<script src="js/bootstrap-4.4.1.js"></script>
-
-	<!-- Mon script -->
-	<script type="text/javascript" src="js/panier.js"></script>
+	  <!-- Mon script -->
+	  <script src="js/panier.js"></script>
   	</body>
 </html>

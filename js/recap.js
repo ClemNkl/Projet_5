@@ -1,4 +1,5 @@
-let idOrder = sessionStorage.getItem("idOrder");
+let order = JSON.parse(sessionStorage.getItem("order"));
+let idOrder = order["orderId"];
 let price = sessionStorage.getItem("prixOrder");
 let elt = document.getElementById("recap");
 let p = document.createElement("p");
